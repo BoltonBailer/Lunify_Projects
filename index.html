@@ -9,10 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --blue-900:#0a5c91; /* classic topbar blue */
+      --blue-900:#0a5c91;
       --blue-700:#167fbd;
       --blue-100:#e7f2fb;
-      --bg:#0c0c0c;       /* dark chrome background */
+      --bg:#0b0b0b;
       --card:#ffffff;
       --text:#111;
       --muted:#6b7280;
@@ -23,19 +23,16 @@
     html,body{height:100%}
     body{
       margin:0; font-family:Inter,system-ui,Arial,Helvetica,sans-serif; color:var(--text);
-      background: radial-gradient( circle at 20% -10%, rgba(22,127,189,.18), transparent 40%),
-                  radial-gradient( circle at 80% 0%, rgba(248,194,78,.15), transparent 35%),
-                  #0b0b0b url('https://tile.openstreetmap.org/0/0/0.png') repeat; /* subtle old-web vibe */
-      background-size: auto, auto, 8px 8px;
+      background:
+        radial-gradient(circle at 20% -10%, rgba(22,127,189,.18), transparent 40%),
+        radial-gradient(circle at 80% 0%, rgba(248,194,78,.15), transparent 35%),
+        #0b0b0b; /* clean base; no default tiles */
+      background-size:auto;
+      cursor: default;
     }
 
-    /* --- TOP BAR --- */
-    .topbar{
-      position:sticky; top:0; z-index:1000;
-      background:linear-gradient(0deg,var(--blue-700),var(--blue-900));
-      color:#fff; border-bottom:3px solid #073d62;
-      box-shadow:0 6px 18px rgba(0,0,0,.25);
-    }
+    /* TOP BAR */
+    .topbar{position:sticky; top:0; z-index:1000; background:linear-gradient(0deg,var(--blue-700),var(--blue-900)); color:#fff; border-bottom:3px solid #073d62; box-shadow:0 6px 18px rgba(0,0,0,.25)}
     .topbar-inner{max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:16px; padding:10px 16px}
     .brand{font-weight:800; letter-spacing:.3px;}
     .brand span{background:#fff;color:var(--blue-900); padding:2px 6px; border-radius:4px; margin-right:6px}
@@ -47,66 +44,58 @@
     .search input{height:32px; border-radius:6px; border:1px solid #063a5b; padding:0 10px; background:#0d3150; color:#fff}
     .userchip{display:flex; align-items:center; gap:8px; background:#0d3150; border:1px solid #063a5b; padding:6px 10px; border-radius:999px}
 
-    /* --- LAYOUT --- */
+    /* LAYOUT */
     .shell{max-width:1200px; margin:18px auto; display:grid; grid-template-columns:260px 1fr 300px; gap:18px; padding:0 16px}
-    @media (max-width: 1000px){ .shell{grid-template-columns:1fr;}} 
+    @media (max-width: 1000px){ .shell{grid-template-columns:1fr;}}
 
     .card{background:var(--card); border-radius:12px; box-shadow:0 12px 24px rgba(0,0,0,.22); border:1px solid #dfe7f0}
     .card .hd{padding:12px 14px; border-bottom:1px solid #e8eef5; background:linear-gradient(180deg,#f6fbff,#e9f2fb)}
     .card .hd h3{margin:0; font-size:16px; letter-spacing:.2px}
     .card .bd{padding:14px}
 
-    /* --- SIDEBAR (LEFT) --- */
+    /* SIDEBAR PROFILE */
     .profile{overflow:hidden}
     .profile .cover{height:96px; background:linear-gradient(90deg,#0e5191,#15a0ff);}
     .pfp{width:96px; height:96px; border-radius:10px; border:4px solid #fff; transform:translate(14px,-48px); background:#ddd url('https://avatars.githubusercontent.com/u/9919?s=200&v=4') center/cover no-repeat}
     .profile .bd{margin-top:-42px}
     .name{font-size:20px; font-weight:800}
-    .stats{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px}
-    .stats div{background:#f6fbff; border:1px dashed #cfe4f7; padding:8px; border-radius:8px; text-align:center; font-size:12px}
-    .actions{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
-    .btn{background:var(--blue-700); color:#fff; border:0; padding:8px 12px; border-radius:8px; text-decoration:none; font-weight:700}
-    .btn.secondary{background:#0d3150}
+    .tiny{font-size:12px; color:var(--muted)}
 
-    /* --- MAIN COLUMN --- */
+    /* FEED */
+    .feed{display:grid; gap:18px}
     .announcement .tom{display:flex; gap:12px; align-items:center}
     .tom img{width:44px; height:44px; border-radius:50%; border:2px solid #fff; box-shadow:0 4px 10px rgba(0,0,0,.15)}
-    .meta{font-size:12px; color:var(--muted)}
-
     .status{display:flex; gap:10px; align-items:center}
     .pill{display:inline-flex; align-items:center; gap:6px; border:1px solid #d9e6f5; padding:6px 10px; border-radius:999px; background:#f6fbff}
     .mood{font-weight:700}
-
-    .feed{display:grid; gap:18px}
     .post{border:1px solid #e8eef5; border-radius:10px; overflow:hidden}
     .post .phd{background:#f4f7fb; padding:10px 14px; display:flex; align-items:center; gap:10px}
     .post .author{font-weight:700}
     .post .pbd{padding:12px 14px}
 
-    /* --- RIGHT COLUMN --- */
+    /* RIGHT COLUMN */
     .ad{display:grid; place-items:center; background:#f6fbff; border:1px dashed #cfe4f7; border-radius:10px; height:140px; font-weight:700; color:#0e5191}
     .friends{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
     .friend{display:grid; gap:6px; justify-items:center}
     .friend img{width:80px; aspect-ratio:1; object-fit:cover; border-radius:8px; border:2px solid #fff; box-shadow:0 8px 16px rgba(0,0,0,.15)}
 
-    /* --- LINKS / UTIL --- */
     a{color:var(--link)}
-    .tiny{font-size:12px; color:var(--muted)}
     footer{max-width:1200px; margin:30px auto 60px; padding:0 16px; color:#c9d3df; font-size:12px}
 
-      /* --- FUN EXTRAS (music + glitter cursor) --- */
+    /* Player + Sparkles */
     .player{display:flex; flex-direction:column; gap:10px}
     .player input[type="url"]{width:100%; height:36px; border:1px solid #d9e6f5; border-radius:8px; padding:0 10px}
     .player .row{display:flex; gap:8px; flex-wrap:wrap}
     .player button{border:0; padding:8px 12px; border-radius:8px; font-weight:700; background:var(--blue-700); color:#fff}
     .player button.secondary{background:#0d3150}
-
-    .settings label{display:block; font-size:12px; color:var(--muted); margin-bottom:6px}
-    .settings input[type="url"], .settings select{width:100%; height:36px; border:1px solid #d9e6f5; border-radius:8px; padding:0 10px}
-    .settings .row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
-
-    /* Glitter cursor particles */
     .sparkle{position:fixed; width:8px; height:8px; pointer-events:none; border-radius:50%; box-shadow:0 0 10px 2px rgba(255,255,255,.9)}
+
+    /* Now Playing badge */
+    .now-playing{position:fixed; left:16px; bottom:16px; z-index:2000; display:none; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; border:1px solid #2e2e2e; background:rgba(0,0,0,.6); color:#fff; backdrop-filter:blur(4px)}
+    .eqdot{width:4px; height:10px; background:#0ff; border-radius:2px; animation:eq 1s ease-in-out infinite}
+    .eqdot:nth-child(2){animation-delay:.15s}
+    .eqdot:nth-child(3){animation-delay:.3s}
+    @keyframes eq{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1.4)}}
   </style>
 </head>
 <body>
@@ -115,11 +104,7 @@
     <div class="topbar-inner">
       <div class="brand"><span>my</span>space</div>
       <nav class="nav">
-        <a href="#">Home</a>
-        <a href="#">Mail</a>
-        <a href="#">Profile</a>
-        <a href="#">Friends</a>
-        <a href="#">More ▾</a>
+        <a href="#">Home</a><a href="#">Mail</a><a href="#">Profile</a><a href="#">Friends</a><a href="#">More ▾</a>
       </nav>
       <div class="spacer"></div>
       <div class="search">
@@ -136,8 +121,7 @@
       <div class="pfp" title="Your photo"></div>
       <div class="bd">
         <div class="name">Marcos Luna</div>
-        <div class="tiny" id="lastLogin">Last Login: 4.20.2002</div>
-
+        <div class="tiny" id="lastLogin">Last Login: —</div>
         <div style="margin-top:12px" class="tiny">URL: https://boltonbailer.github.io/Lunify_Projects/ • <a href="#">(Customize)</a></div>
       </div>
     </aside>
@@ -151,7 +135,7 @@
             <img src="https://i.imgur.com/4ZQZ4nX.jpeg" alt="Tom"/>
             <div>
               <div><strong>Latest Update:</strong> <span id="today"></span> PST</div>
-              <div class="tiny">Hello and wolcome to my BLOG!I will be posting weekly updates on my AI Project! so stay tuned *)</div>
+              <div class="tiny">Hello and welcome to my BLOG! I will be posting weekly updates on my AI Project! So stay tuned ✨</div>
             </div>
           </div>
         </div>
@@ -161,12 +145,13 @@
         <div class="hd"><h3>Status & Mood</h3></div>
         <div class="bd">
           <div class="status">
-            <div class="pill"><span>📡 Status:</span> Coding and Drinking some coffee</div>
+            <div class="pill"><span>📡 Status:</span> Coding and drinking some coffee</div>
             <div class="pill"><span>😎 Mood:</span> <span class="mood">Chill</span></div>
           </div>
         </div>
       </article>
-    <!-- RIGHT: This is where to add posts -->
+
+      <!-- POSTS -->
       <article class="card post">
         <div class="phd">
           <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="avatar" width="32" height="32" style="border-radius:50%"/>
@@ -194,44 +179,13 @@
         <div class="hd"><h3>Profile Song</h3></div>
         <div class="bd player">
           <audio id="profileSong" controls preload="none" style="width:100%"></audio>
-          <input id="songUrl" type="url" placeholder="https://www.youtube.com/watch?v=n61ULEU7CO0&list=RDn61ULEU7CO0" />
+          <input id="songUrl" type="url" placeholder="Paste MP3 URL (e.g., https://.../song.mp3)" />
           <div class="row">
             <button id="saveSong">Save</button>
             <button id="playSong">Play</button>
             <button id="pauseSong" class="secondary">Pause</button>
           </div>
           <div class="tiny">Browsers block autoplay with sound. Hit <strong>Play</strong> like it’s 2008 ☺️</div>
-        </div>
-      </div>
-
-      <div class="card" style="margin-top:18px">
-        <div class="hd"><h3>Page Style</h3></div>
-        <div class="bd settings">
-          <label>Background Image URL</label>
-          <input id="bgUrl" type="url" placeholder="https://wallpapercave.com/wp/wp10299627.jpg" />
-          <div class="row" style="margin-top:10px">
-            <div>
-              <label>Background Mode</label>
-              <select id="bgMode">
-                <option value="tile">Tile (classic)</option>
-                <option value="cover">Cover (full screen)</option>
-                <option value="contain">Contain</option>
-                <option value="none">None (use gradient)</option>
-              </select>
-            </div>
-            <div>
-              <label>Cursor Bling</label>
-              <select id="bling">
-                <option value="off">Off</option>
-                <option value="sparkles">Sparkles ✨</option>
-              </select>
-            </div>
-          </div>
-          <div class="row" style="margin-top:10px">
-            <button id="saveStyle">Save Style</button>
-            <button id="resetStyle" class="secondary">Reset</button>
-          </div>
-          <div class="tiny">All settings saved in your browser (localStorage).</div>
         </div>
       </div>
 
@@ -263,93 +217,37 @@
     <div>Made with ❤ on GitHub Pages • © <span id="yr"></span> You</div>
   </footer>
 
+  <!-- Now Playing badge -->
+  <div id="nowPlaying" class="now-playing">
+    <div style="display:flex; gap:4px; align-items:end; margin-right:6px">
+      <div class="eqdot"></div><div class="eqdot"></div><div class="eqdot"></div>
+    </div>
+    <span>Now Playing: Panic! At The Disco — I Write Sins Not Tragedies</span>
+  </div>
+
   <script>
-    // Set display dates to feel like the screenshot
-    const today = new Date();
-    const fmt = today.toLocaleString('en-US', { month:'short', day:'2-digit' });
-    document.getElementById('today').textContent = `${fmt}, ${today.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'})}`;
-    document.getElementById('yr').textContent = today.getFullYear();
-    document.getElementById('lastLogin').textContent = 'Last Login: ' + today.toLocaleDateString('en-US');
-    <script>
-    // Existing dates
+    // Dates
     const today = new Date();
     const fmt = today.toLocaleString('en-US', { month:'short', day:'2-digit' });
     document.getElementById('today').textContent = `${fmt}, ${today.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'})}`;
     document.getElementById('yr').textContent = today.getFullYear();
     document.getElementById('lastLogin').textContent = 'Last Login: ' + today.toLocaleDateString('en-US');
 
-    // --- PROFILE SONG ---
+    // Profile song (manual)
     const audio = document.getElementById('profileSong');
     const songUrl = document.getElementById('songUrl');
     const saveSong = document.getElementById('saveSong');
     const playSong = document.getElementById('playSong');
     const pauseSong = document.getElementById('pauseSong');
-
-    // Load saved song
     const savedSong = localStorage.getItem('profileSongUrl');
     if(savedSong){ audio.src = savedSong; songUrl.value = savedSong; }
-
-    saveSong.onclick = () => { if(songUrl.value){ localStorage.setItem('profileSongUrl', songUrl.value); audio.src = songUrl.value; audio.load(); }}
-    playSong.onclick = () => { audio.play().catch(() => {}); } // user gesture required in some browsers
+    saveSong.onclick = () => { if(songUrl.value){ localStorage.setItem('profileSongUrl', songUrl.value); audio.src = songUrl.value; audio.load(); }};
+    playSong.onclick = () => { audio.play().catch(() => {}); };
     pauseSong.onclick = () => audio.pause();
 
-    // --- PAGE STYLE (background + cursor bling) ---
-    const bgUrl = document.getElementById('bgUrl');
-    const bgMode = document.getElementById('bgMode');
-    const bling = document.getElementById('bling');
-    const saveStyle = document.getElementById('saveStyle');
-    const resetStyle = document.getElementById('resetStyle');
-
-    const applyStyle = () => {
-      const u = localStorage.getItem('bgUrl') || '';
-      const m = localStorage.getItem('bgMode') || 'tile';
-      const b = localStorage.getItem('bling') || 'off';
-      bgUrl.value = u; bgMode.value = m; bling.value = b;
-
-      if(m === 'none' || !u){
-        document.body.style.background = 'radial-gradient(circle at 20% -10%, rgba(22,127,189,.18), transparent 40%),
- radial-gradient(circle at 80% 0%, rgba(248,194,78,.15), transparent 35%),
- #0b0b0b';
-      } else if(m === 'tile'){
-        document.body.style.background = `#0b0b0b url('${u}') repeat`;
-        document.body.style.backgroundSize = 'auto';
-      } else if(m === 'cover'){
-        document.body.style.background = `#0b0b0b url('${u}') center/cover fixed no-repeat`;
-      } else if(m === 'contain'){
-        document.body.style.background = `#0b0b0b url('${u}') center/contain fixed no-repeat`;
-      }
-
-      // Glitter cursor
-      if(b === 'sparkles') enableSparkles(); else disableSparkles();
-    };
-
-    saveStyle.onclick = () => {
-      localStorage.setItem('bgUrl', bgUrl.value);
-      localStorage.setItem('bgMode', bgMode.value);
-      localStorage.setItem('bling', bling.value);
-      applyStyle();
-    };
-
-    resetStyle.onclick = () => {
-      ['bgUrl','bgMode','bling'].forEach(localStorage.removeItem.bind(localStorage));
-      applyStyle();
-    };
-
-    applyStyle();
-
-    // Glitter cursor implementation
+    // Sparkles
     let sparkleTimer; let activeSparkles = [];
-    function enableSparkles(){
-      if(sparkleTimer) return;
-      window.addEventListener('mousemove', sparkleMove);
-      sparkleTimer = true;
-    }
-    function disableSparkles(){
-      window.removeEventListener('mousemove', sparkleMove);
-      activeSparkles.forEach(el=>el.remove());
-      activeSparkles = []; sparkleTimer = null;
-    }
-    function sparkleMove(e){
+    window.addEventListener('mousemove', function sparkleMove(e){
       for(let i=0;i<2;i++){
         const s = document.createElement('div');
         s.className = 'sparkle';
@@ -363,7 +261,44 @@
         setTimeout(()=>{ s.style.transition = 'all .6s ease-out'; s.style.transform = 'translateY(-12px) scale(.6)'; s.style.opacity = '0'; }, 0);
         setTimeout(()=>{ s.remove(); activeSparkles = activeSparkles.filter(x=>x!==s); }, 650);
       }
-    }
+    });
+
+    // Hidden YouTube autoplay (fade-in) + Now Playing badge
+    (function setupHiddenYouTube(){
+      const ytscript = document.createElement('script');
+      ytscript.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(ytscript);
+      const holder = document.createElement('div');
+      holder.id = 'yt-embed';
+      holder.style.cssText = 'position:fixed;left:-9999px;bottom:-9999px;width:1px;height:1px;overflow:hidden;';
+      document.body.appendChild(holder);
+      const badge = document.getElementById('nowPlaying');
+      window.onYouTubeIframeAPIReady = () => {
+        const vid = 'n61ULEU7CO0';       // Panic! I Write Sins
+        const startSeconds = 3867;        // your timestamp
+        const player = new YT.Player('yt-embed', {
+          height:'1', width:'1', videoId: vid,
+          playerVars:{autoplay:1,controls:0,disablekb:1,fs:0,modestbranding:1,rel:0,start:startSeconds,loop:0,playsinline:1},
+          events:{
+            onReady: (e)=>{
+              try{
+                e.target.mute();
+                e.target.playVideo();
+                badge.style.display='flex';
+                setTimeout(()=>{
+                  try{ e.target.unMute(); }catch(err){}
+                  let vol=0; try{ e.target.setVolume(0);}catch(err){}
+                  const tick=setInterval(()=>{
+                    vol+=6; if(vol>=36){vol=36; clearInterval(tick);}
+                    try{ e.target.setVolume(vol);}catch(err){ clearInterval(tick); }
+                  },300);
+                },1200);
+              }catch(err){}
+            }
+          }
+        });
+      };
+    })();
   </script>
 </body>
 </html>
