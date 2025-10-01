@@ -22,14 +22,17 @@
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; font-family:Inter,system-ui,Arial,Helvetica,sans-serif; color:var(--text);
+      margin:0; font-family: Inter, system-ui, Arial, Helvetica, sans-serif;
+      color: var(--text);
       background:
-        radial-gradient(circle at 20% -10%, rgba(22,127,189,.18), transparent 40%),
-        radial-gradient(circle at 80% 0%, rgba(248,194,78,.15), transparent 35%),
-        #0b0b0b; /* clean base; no default tiles */
-      background-size:auto;
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),  /* optional dark overlay for readability */
+        url('https://i.ytimg.com/vi/GPQhIrp1AJ4/maxresdefault.jpg') center center fixed no-repeat;
+      background-size: cover;
       cursor: default;
     }
+
+    
+    
 
     /* TOP BAR */
     .topbar{position:sticky; top:0; z-index:1000; background:linear-gradient(0deg,var(--blue-700),var(--blue-900)); color:#fff; border-bottom:3px solid #073d62; box-shadow:0 6px 18px rgba(0,0,0,.25)}
