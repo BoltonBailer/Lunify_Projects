@@ -303,41 +303,7 @@
     });
 
     // Hidden YouTube autoplay (fade-in) + Now Playing badge
-    (function setupHiddenYouTube(){
-      const ytscript = document.createElement('script');
-      ytscript.src = 'https://www.youtube.com/iframe_api';
-      document.head.appendChild(ytscript);
-      const holder = document.createElement('div');
-      holder.id = 'yt-embed';
-      holder.style.cssText = 'position:fixed;left:-9999px;bottom:-9999px;width:1px;height:1px;overflow:hidden;';
-      document.body.appendChild(holder);
-      const badge = document.getElementById('nowPlaying');
-      window.onYouTubeIframeAPIReady = () => {
-        const vid = 'n61ULEU7CO0';       // Panic! I Write Sins
-        const startSeconds = 3867;        // your timestamp
-        const player = new YT.Player('yt-embed', {
-          height:'1', width:'1', videoId: vid,
-          playerVars:{autoplay:1,controls:0,disablekb:1,fs:0,modestbranding:1,rel:0,start:startSeconds,loop:0,playsinline:1},
-          events:{
-            onReady: (e)=>{
-              try{
-                e.target.mute();
-                e.target.playVideo();
-                badge.style.display='flex';
-                setTimeout(()=>{
-                  try{ e.target.unMute(); }catch(err){}
-                  let vol=0; try{ e.target.setVolume(0);}catch(err){}
-                  const tick=setInterval(()=>{
-                    vol+=6; if(vol>=36){vol=36; clearInterval(tick);}
-                    try{ e.target.setVolume(vol);}catch(err){ clearInterval(tick); }
-                  },300);
-                },1200);
-              }catch(err){}
-            }
-          }
-        });
-      };
-    })();
+  
   </script>
 </body>
 </html>
