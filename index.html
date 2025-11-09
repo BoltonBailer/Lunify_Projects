@@ -22,44 +22,125 @@
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; font-family: Inter, system-ui, Arial, Helvetica, sans-serif;
+      margin:0;
+      font-family: Inter, system-ui, Arial, Helvetica, sans-serif;
       color: var(--text);
       background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),  /* optional dark overlay for readability */
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
         url('https://i.ytimg.com/vi/GPQhIrp1AJ4/maxresdefault.jpg') center center fixed no-repeat;
       background-size: cover;
       cursor: default;
     }
 
-    
-    
-
     /* TOP BAR */
-    .topbar{position:sticky; top:0; z-index:1000; background:linear-gradient(0deg,var(--blue-700),var(--blue-900)); color:#fff; border-bottom:3px solid #073d62; box-shadow:0 6px 18px rgba(0,0,0,.25)}
-    .topbar-inner{max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:16px; padding:10px 16px}
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:linear-gradient(0deg,var(--blue-700),var(--blue-900));
+      color:#fff;
+      border-bottom:3px solid #073d62;
+      box-shadow:0 6px 18px rgba(0,0,0,.25)
+    }
+    .topbar-inner{
+      max-width:1200px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:10px 16px
+    }
     .brand{font-weight:800; letter-spacing:.3px;}
-    .brand span{background:#fff;color:var(--blue-900); padding:2px 6px; border-radius:4px; margin-right:6px}
-    .nav{display:flex; gap:14px; margin-left:8px; flex-wrap:wrap}
-    .nav a{color:#eaf6ff; text-decoration:none; font-weight:600; padding:6px 10px; border-radius:6px}
+    .brand span{
+      background:#fff;
+      color:var(--blue-900);
+      padding:2px 6px;
+      border-radius:4px;
+      margin-right:6px
+    }
+    .nav{
+      display:flex;
+      gap:14px;
+      margin-left:8px;
+      flex-wrap:wrap
+    }
+    .nav a{
+      color:#eaf6ff;
+      text-decoration:none;
+      font-weight:600;
+      padding:6px 10px;
+      border-radius:6px
+    }
     .nav a:hover{background:rgba(255,255,255,.12)}
     .spacer{flex:1}
-    .search{display:flex; align-items:center; gap:8px}
-    .search input{height:32px; border-radius:6px; border:1px solid #063a5b; padding:0 10px; background:#0d3150; color:#fff}
-    .userchip{display:flex; align-items:center; gap:8px; background:#0d3150; border:1px solid #063a5b; padding:6px 10px; border-radius:999px}
+    .search{
+      display:flex;
+      align-items:center;
+      gap:8px
+    }
+    .search input{
+      height:32px;
+      border-radius:6px;
+      border:1px solid #063a5b;
+      padding:0 10px;
+      background:#0d3150;
+      color:#fff
+    }
+    .userchip{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background:#0d3150;
+      border:1px solid #063a5b;
+      padding:6px 10px;
+      border-radius:999px
+    }
 
     /* LAYOUT */
-    .shell{max-width:1400px; margin:18px auto; display:grid; grid-template-columns:320px 1fr 300px; gap:18px; padding:0 16px}
-    @media (max-width: 1000px){ .shell{grid-template-columns:1fr;}}
+    .shell{
+      max-width:1400px;
+      margin:18px auto;
+      display:grid;
+      grid-template-columns:320px 1fr 300px;
+      gap:18px;
+      padding:0 16px
+    }
+    @media (max-width: 1000px){
+      .shell{grid-template-columns:1fr;}
+    }
 
-    .card{background:var(--card); border-radius:12px; box-shadow:0 12px 24px rgba(0,0,0,.22); border:1px solid #dfe7f0}
-    .card .hd{padding:12px 14px; border-bottom:1px solid #e8eef5; background:linear-gradient(180deg,#f6fbff,#e9f2fb)}
-    .card .hd h3{margin:0; font-size:16px; letter-spacing:.2px}
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      box-shadow:0 12px 24px rgba(0,0,0,.22);
+      border:1px solid #dfe7f0
+    }
+    .card .hd{
+      padding:12px 14px;
+      border-bottom:1px solid #e8eef5;
+      background:linear-gradient(180deg,#f6fbff,#e9f2fb)
+    }
+    .card .hd h3{
+      margin:0;
+      font-size:16px;
+      letter-spacing:.2px
+    }
     .card .bd{padding:14px}
 
     /* SIDEBAR PROFILE */
     .profile{overflow:hidden}
-    .profile .cover{height:96px; background:linear-gradient(90deg,#0e5191,#15a0ff);}
-    .pfp{width:96px; height:96px; border-radius:10px; border:4px solid #fff; transform:translate(14px,-48px); background:#ddd url('https://avatars.githubusercontent.com/u/9919?s=200&v=4') center/cover no-repeat}
+    .profile .cover{
+      height:96px;
+      background:linear-gradient(90deg,#0e5191,#15a0ff);
+    }
+    .pfp{
+      width:96px;
+      height:96px;
+      border-radius:10px;
+      border:4px solid #fff;
+      transform:translate(14px,-48px);
+      background:#ddd url('https://avatars.githubusercontent.com/u/9919?s=200&v=4') center/cover no-repeat
+    }
     .profile .bd{margin-top:-42px}
     .name{font-size:20px; font-weight:800}
     .tiny{font-size:12px; color:var(--muted)}
@@ -67,49 +148,161 @@
     /* FEED */
     .feed{display:grid; gap:18px}
     .announcement .tom{display:flex; gap:12px; align-items:center}
-    .tom img{width:44px; height:44px; border-radius:50%; border:2px solid #fff; box-shadow:0 4px 10px rgba(0,0,0,.15)}
+    .tom img{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      border:2px solid #fff;
+      box-shadow:0 4px 10px rgba(0,0,0,.15)
+    }
     .status{display:flex; gap:10px; align-items:center}
-    .pill{display:inline-flex; align-items:center; gap:6px; border:1px solid #d9e6f5; padding:6px 10px; border-radius:999px; background:#f6fbff}
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      border:1px solid #d9e6f5;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#f6fbff
+    }
     .mood{font-weight:700}
-    .post{border:1px solid #e8eef5; border-radius:10px; overflow:hidden}
-    .post .phd{background:#f4f7fb; padding:10px 14px; display:flex; align-items:center; gap:10px}
+    .post{
+      border:1px solid #e8eef5;
+      border-radius:10px;
+      overflow:hidden
+    }
+    .post .phd{
+      background:#f4f7fb;
+      padding:10px 14px;
+      display:flex;
+      align-items:center;
+      gap:10px
+    }
     .post .author{font-weight:700}
     .post .pbd{padding:12px 14px}
 
     /* RIGHT COLUMN */
-    .ad{display:grid; place-items:center; background:#f6fbff; border:1px dashed #cfe4f7; border-radius:10px; height:140px; font-weight:700; color:#0e5191}
-    .friends{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
-    .friend{display:grid; gap:6px; justify-items:center}
-    .friend img{width:80px; aspect-ratio:1; object-fit:cover; border-radius:8px; border:2px solid #fff; box-shadow:0 8px 16px rgba(0,0,0,.15)}
+    .rightcol{}
+    .ad{
+      display:grid;
+      place-items:center;
+      background:#f6fbff;
+      border:1px dashed #cfe4f7;
+      border-radius:10px;
+      height:140px;
+      font-weight:700;
+      color:#0e5191
+    }
+    .friends{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px
+    }
+    .friend{
+      display:grid;
+      gap:6px;
+      justify-items:center
+    }
+    .friend img{
+      width:80px;
+      aspect-ratio:1;
+      object-fit:cover;
+      border-radius:8px;
+      border:2px solid #fff;
+      box-shadow:0 8px 16px rgba(0,0,0,.15)
+    }
 
     a{color:var(--link)}
-    footer{max-width:1200px; margin:30px auto 60px; padding:0 16px; color:#c9d3df; font-size:12px}
+    footer{
+      max-width:1200px;
+      margin:30px auto 60px;
+      padding:0 16px;
+      color:#c9d3df;
+      font-size:12px
+    }
 
     /* Player + Sparkles */
-    .player{display:flex; flex-direction:column; gap:10px}
-    .player input[type="url"]{width:100%; height:36px; border:1px solid #d9e6f5; border-radius:8px; padding:0 10px}
-    .player .row{display:flex; gap:8px; flex-wrap:wrap}
-    .player button{border:0; padding:8px 12px; border-radius:8px; font-weight:700; background:var(--blue-700); color:#fff}
+    .player{
+      display:flex;
+      flex-direction:column;
+      gap:10px
+    }
+    .player input[type="url"]{
+      width:100%;
+      height:36px;
+      border:1px solid #d9e6f5;
+      border-radius:8px;
+      padding:0 10px
+    }
+    .player .row{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap
+    }
+    .player button{
+      border:0;
+      padding:8px 12px;
+      border-radius:8px;
+      font-weight:700;
+      background:var(--blue-700);
+      color:#fff
+    }
     .player button.secondary{background:#0d3150}
-    .sparkle{position:fixed; width:8px; height:8px; pointer-events:none; border-radius:50%; box-shadow:0 0 10px 2px rgba(255,255,255,.9)}
+    .sparkle{
+      position:fixed;
+      width:8px;
+      height:8px;
+      pointer-events:none;
+      border-radius:50%;
+      box-shadow:0 0 10px 2px rgba(255,255,255,.9)
+    }
 
     /* Now Playing badge */
-    .now-playing{position:fixed; left:16px; bottom:16px; z-index:2000; display:none; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; border:1px solid #2e2e2e; background:rgba(0,0,0,.6); color:#fff; backdrop-filter:blur(4px)}
-    .eqdot{width:4px; height:10px; background:#0ff; border-radius:2px; animation:eq 1s ease-in-out infinite}
+    .now-playing{
+      position:fixed;
+      left:16px;
+      bottom:16px;
+      z-index:2000;
+      display:none;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid #2e2e2e;
+      background:rgba(0,0,0,.6);
+      color:#fff;
+      backdrop-filter:blur(4px)
+    }
+    .eqdot{
+      width:4px;
+      height:10px;
+      background:#0ff;
+      border-radius:2px;
+      animation:eq 1s ease-in-out infinite
+    }
     .eqdot:nth-child(2){animation-delay:.15s}
     .eqdot:nth-child(3){animation-delay:.3s}
-    @keyframes eq{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1.4)}}
+    @keyframes eq{
+      0%,100%{transform:scaleY(.4)}
+      50%{transform:scaleY(1.4)}
+    }
   </style>
 </head>
 <body>
   <!-- TOP NAV -->
   <header class="topbar">
     <div class="topbar-inner">
-      <div class="brand"><img src="https://logos-world.net/wp-content/uploads/2022/05/Myspace-Logo.png" 
-       alt="MySpace Logo" 
-       style="height:32px; display:block;"></div>
+      <div class="brand">
+        <img src="https://logos-world.net/wp-content/uploads/2022/05/Myspace-Logo.png"
+             alt="MySpace Logo"
+             style="height:32px; display:block;">
+      </div>
       <nav class="nav">
-        <a href="#">Home</a><a href="#">Mail</a><a href="#">Profile</a><a href="#">Friends</a><a href="#">More ▾</a>
+        <a href="#">Home</a>
+        <a href="#">Mail</a>
+        <a href="#">Profile</a>
+        <a href="#">Friends</a>
+        <a href="#">More ▾</a>
       </nav>
       <div class="spacer"></div>
       <div class="search">
@@ -127,7 +320,9 @@
       <div class="bd">
         <div class="name">Marcos Luna</div>
         <div class="tiny" id="lastLogin">Last Login: —</div>
-        <div style="margin-top:12px" class="tiny">URL: https://boltonbailer.github.io/Lunify_Projects/   </div>
+        <div style="margin-top:12px" class="tiny">
+          URL: https://boltonbailer.github.io/Lunify_Projects/
+        </div>
       </div>
     </aside>
 
@@ -140,7 +335,9 @@
             <img src="https://i.imgur.com/4ZQZ4nX.jpeg" alt="Tom"/>
             <div>
               <div><strong>Latest Update:</strong> <span id="today"></span> PST</div>
-              <div class="tiny">Hello and welcome to my BLOG! I will be posting weekly updates on my AI Project! So stay tuned </div>
+              <div class="tiny">
+                Hello and welcome to my BLOG! I will be posting weekly updates on my AI Project! So stay tuned
+              </div>
             </div>
           </div>
         </div>
@@ -156,29 +353,7 @@
         </div>
       </article>
 
-      <!-- POSTS -->
-      
-            <!-- POSTS Week 1-->
-      <!-- <article class="card post">
-        <div class="phd">
-          <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="avatar" width="32" height="32" style="border-radius:50%"/>
-          <div><span class="author">You</span> • <span class="tiny">Week 1 • 9/30/2025 4:20pm</span></div>
-        </div>
-        <div class="pbd">
-         <p><strong>Intro: Hello World </strong></p>
-
-<p>Hey everyone,I’m Marcos, and this is the start of my little corner on the web. I’ve always loved mixing creativity with technology, whether it’s coding something weird at 2 a.m., building data science tools for Old School RuneScape, or just chasing ideas that keep me up way too late.</p>
-
-<p>My journey here has been a mix of exploration and leveling up my skills. I’m currently studying Computer Science with a focus on AI & Data Science, and I’ve spent the past couple of years building projects that bridge gaming, design, and machine learning. Honestly, half the fun for me is turning serious concepts into playful, creative experiments.</p>
-
-<p>This blog is where I’ll share that journey with you, my wins, my fails, and everything else. My goal is to document my growth, get more consistent with building things in public, and maybe inspire someone else to take that first step too.</p>
-
-<p>Future posts are going to dive into real problems I’m working on and the strategies I use to solve them, whether that’s debugging cursed code, training a model, or finding clever ways to make apps smarter. But for now… this is the beginning. Thanks for being here</p>
-
-        </div>
-      </article> -->
-      
-            <!-- POSTS Week 2-->      
+      <!-- POSTS Week 2 -->
       <article class="card post">
         <div class="phd">
           <img src="https://i.imgur.com/5A7Rj2V.png" alt="avatar" width="32" height="32" style="border-radius:50%"/>
@@ -187,117 +362,83 @@
         <div class="pbd">
           <p><strong>Stlye tiles/ Design Doc</strong></p>
           <p>Weekly Progress – BeeLine Project</p>
-
-<p>Whats up everyone! Thanks for tunning in again on our week two, Isabella and I's main focus was working BeeLine’s style tile and filling out the design documentation to create visual identity for the app. The style tile direction we used for BeeLine is a warm, nature inspired palette designed that ties in to the app’s ecological theme. We chose colors like Golden Honey (#F9B233) and Leaf Green (#5B8C5A) to symbolize pollination, growth, and sustainability, paired with softer neutrals for accessibility and readability.</p>
-
-<p>Typography was another big decision. We selected Playfair Display for headlines to give a friendly, and we also picked the organic feel and LORA for Sub headlines for its readability, and lastly Poppins for body text.</p>
-
-<p>In the User Interface section, we created mockups showing how the color and font choices translate into a cohesive in app experience. Elements like the map view, bee icons, and plant profile cards were styled to feel both informative and playful.</p>
-
-<p>The design document now outlines BeeLine’s core goal, giving people ecological awareness and encouraging small actions toward pollinator conservation. We also finalized the list of developer tools (like React Native, PostgreSQL, and Node.js) and content tools (such as Figma and Illustrator) of which I have 10 years of experience in.</p>
-
-<p>Next week, we’ll begin translating these design principles into interactive wireframes and start defining user flows within the app.</p>
-
-<p>Thanls for tunning in, we'll see you next week!</p>
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/zz6ci3Y" data-context="false" ><a href="//imgur.com/a/zz6ci3Y"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>    
+          <p>Whats up everyone! Thanks for tunning in again on our week two, Isabella and I's main focus was working BeeLine’s style tile and filling out the design documentation to create visual identity for the app. The style tile direction we used for BeeLine is a warm, nature inspired palette designed that ties in to the app’s ecological theme. We chose colors like Golden Honey (#F9B233) and Leaf Green (#5B8C5A) to symbolize pollination, growth, and sustainability, paired with softer neutrals for accessibility and readability.</p>
+          <p>Typography was another big decision. We selected Playfair Display for headlines to give a friendly, and we also picked the organic feel and LORA for Sub headlines for its readability, and lastly Poppins for body text.</p>
+          <p>In the User Interface section, we created mockups showing how the color and font choices translate into a cohesive in app experience. Elements like the map view, bee icons, and plant profile cards were styled to feel both informative and playful.</p>
+          <p>The design document now outlines BeeLine’s core goal, giving people ecological awareness and encouraging small actions toward pollinator conservation. We also finalized the list of developer tools (like React Native, PostgreSQL, and Node.js) and content tools (such as Figma and Illustrator) of which I have 10 years of experience in.</p>
+          <p>Next week, we’ll begin translating these design principles into interactive wireframes and start defining user flows within the app.</p>
+          <p>Thanls for tunning in, we'll see you next week!</p>
+          <blockquote class="imgur-embed-pub" lang="en" data-id="a/zz6ci3Y" data-context="false"><a href="//imgur.com/a/zz6ci3Y"></a></blockquote>
+          <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
         </div>
       </article>
-      
-          <!-- POSTS Week 3-->      
+
+      <!-- POSTS Week 3 -->
       <article class="card post">
         <div class="phd">
           <img src="https://i.imgur.com/5A7Rj2V.png" alt="avatar" width="32" height="32" style="border-radius:50%"/>
-          <div><span class="author">You</span> • <span class="tiny">Week 3 •  10/14/2025 4:20pm </span></div>
+          <div><span class="author">You</span> • <span class="tiny">Week 3 • 10/14/2025 4:20pm</span></div>
         </div>
         <div class="pbd">
           <p><strong>Lo-fi Wireframe and Jira</strong></p>
-          <p>
-This week our team focused on refining both organization and visual direction for the BeeLine app.
-We started by updating our Jira board to better track individual tasks, making sure each feature and screen had clear priorities and deadlines. 
-This is really going to helps us stay aligned on who was handling which parts of the project and also keeping track of different parts of the project progression
-Since its early on, most items are in the "TODO" section but will move towards getting them into the " in-progress" Next week.
-</p> 
-
-<p>
-One of the biggest milestones was completing our low-fi Figma prototype for the BeeLine blog feature. 
-The new lo-fi designs include simplified layouts for the post feed, single article view, and a clean home navigation system that matches the app’s existing visual identity.
- We made sure to keep accessibility in mind, using consistent iconography and minimal color distractions to keep the focus on content. Since it our lo-fi model, we kept everything gray and short and sweet. also added workable buttons so we can see the flow through each page.
-</p> 
-
-<p>
-Overall, this week was about working on structure and flow rather than just adding new visuals. 
-Updating the Jira board gave us better task visials on what needs to be worked on, 
-the design doc revisions gave us a better picture of work flow, and the Figma lo-fi brought everything together visually.
-Thanks for tunning in and well see you next week!
-</p>
-          <blockquote class="imgur-embed-pub" lang="en" data-id="a/JRuROF5" data-context="false" ><a href="//imgur.com/a/JRuROF5"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-          
+          <p>This week our team focused on refining both organization and visual direction for the BeeLine app. We started by updating our Jira board to better track individual tasks, making sure each feature and screen had clear priorities and deadlines. This is really going to helps us stay aligned on who was handling which parts of the project and also keeping track of different parts of the project progression. Since it's early on, most items are in the "TODO" section but will move towards "in-progress" next week.</p>
+          <p>One of the biggest milestones was completing our low-fi Figma prototype for the BeeLine blog feature. The new lo-fi designs include simplified layouts for the post feed, single article view, and a clean home navigation system that matches the app’s existing visual identity. We made sure to keep accessibility in mind, using consistent iconography and minimal color distractions to keep the focus on content. Since it's our lo-fi model, we kept everything gray and short and sweet, and added workable buttons so we can see the flow through each page.</p>
+          <p>Overall, this week was about working on structure and flow rather than just adding new visuals. Updating the Jira board gave us better task visuals on what needs to be worked on, the design doc revisions gave us a better picture of workflow, and the Figma lo-fi brought everything together visually. Thanks for tunning in and we'll see you next week!</p>
+          <blockquote class="imgur-embed-pub" lang="en" data-id="a/JRuROF5" data-context="false"><a href="//imgur.com/a/JRuROF5"></a></blockquote>
+          <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
         </div>
       </article>
 
-                <!-- POSTS Week 4-->      
+      <!-- POSTS Week 4 -->
       <article class="card post">
         <div class="phd">
           <img src="https://i.imgur.com/5A7Rj2V.png" alt="avatar" width="32" height="32" style="border-radius:50%"/>
-          <div><span class="author">You</span> • <span class="tiny">Week 4 • </span></div>
+          <div><span class="author">You</span> • <span class="tiny">Week 4 • 10/26/2025 4:20pm</span></div>
         </div>
         <div class="pbd">
-          <p><strong>week 4: Final Wireframe / Jira Board PUSH!</strong> Week 4 •  10/26/2025 4:20pm </p>
-          <p>Hello everyone and thanks for checking in on the project on week four! How time flies!
-           This week my partner and I focuesed on two major mile stones, we completed the final wireframe design and officially set up our GitHub repo! </p>
-          <p>The final wireframe helped us better invision the final product, the color and the floow on how each screen connects to the next. It was nice to finally see everything come together visually,
-            and it gave us a better sense of how users will navigate through the app. We spent time organizing the spacing, aligning elements, and making sure each section felt consistent with our overall style tile and branding choices from earlier weeks.</p>
-           <p>Setting up the GitHub was another major step because now we have a proper version control system in place. It’ll make it a lot easier for the team to collaborate and track updates as we move into the development phase.
-             We created the main branches and added initial files so everyone can start pushing their parts of the project. Having the GitHub also means we can share progress more easily and back up our work without worrying about losing anything.</p>
-          <p>This week felt like the project took its final shape, It made me think more about how the user would use the actual app in the real word, our instructor gave us vital feedback that we implemented right away.</p>
+          <p><strong>week 4: Final Wireframe / Jira Board PUSH!</strong></p>
+          <p>Hello everyone and thanks for checking in on the project on week four! How time flies! This week my partner and I focuesed on two major mile stones, we completed the final wireframe design and officially set up our GitHub repo!</p>
+          <p>The final wireframe helped us better invision the final product, the color and the flow on how each screen connects to the next. It was nice to finally see everything come together visually, and it gave us a better sense of how users will navigate through the app. We spent time organizing the spacing, aligning elements, and making sure each section felt consistent with our overall style tile and branding choices from earlier weeks.</p>
+          <p>Setting up the GitHub was another major step because now we have a proper version control system in place. It’ll make it a lot easier for the team to collaborate and track updates as we move into the development phase. We created the main branches and added initial files so everyone can start pushing their parts of the project.</p>
+          <p>This week felt like the project took its final shape. Our instructor gave us vital feedback that we implemented right away.</p>
           <p>Thats it for week 4, we will see you at the end of next week! :)</p>
-
-        <blockquote class="imgur-embed-pub" lang="en" data-id="a/RCv4T4Z" data-context="false" ><a href="//imgur.com/a/RCv4T4Z"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-          
-          
+          <blockquote class="imgur-embed-pub" lang="en" data-id="a/RCv4T4Z" data-context="false"><a href="//imgur.com/a/RCv4T4Z"></a></blockquote>
+          <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
         </div>
       </article>
 
-                      <!-- POSTS Week 5-->      
+      <!-- POSTS Week 5 -->
       <article class="card post">
         <div class="phd">
           <img src="https://i.imgur.com/5A7Rj2V.png" alt="avatar" width="32" height="32" style="border-radius:50%"/>
-          <div><span class="author">You</span> • <span class="tiny">Week 5 • 11/1/2025 4:20pm </span></div>
+          <div><span class="author">You</span> • <span class="tiny">Week 5 • 11/01/2025 4:20pm</span></div>
         </div>
         <div class="pbd">
           <p><strong>week 5: Inaturalist and PlantNet API intergration</strong></p>
-          <p>This week was all about learning React, and honestly, it was both cool and frustrating at the same time. Learning how React structures everything with components started to click after a while,
-            but figuring out how to actually add and link new pages took me a minute. Between using <code>expo-router</code> and making sure the navigation worked, I probably broke my app five times before it finally ran smoothly on my phone.</p>
-          <p>Once I got the hang of creating new pages like a simple Home screen, an About screen, and linking them with routes, it started to feel more natural.
-            Seeing it all come to life in real time through Expo made the struggle feel worth it.</p>
-          <p>The real challenge though was setting up the API, that part was brutal. 
-              I kept running into weird errors, missing API keys, and CORS issues that made no sense. I’d fix one problem and another one would pop up! But after a ton of trial and error, it finally connected and started 
-              returning real data. That first successful API response felt like a small victory dance moment.</p> <p>All in all, it was a week of headaches and breakthroughs classic dev life. But I can finally say I’m starting to get the hang of React.</p>
+          <p>This week was all about learning React, and honestly, it was both cool and frustrating at the same time. Learning how React structures everything with components started to click after a while, but figuring out how to actually add and link new pages took me a minute. Between using <code>expo-router</code> and making sure the navigation worked, I probably broke my app five times before it finally ran smoothly on my phone.</p>
+          <p>Once I got the hang of creating new pages like a simple Home screen, an About screen, and linking them with routes, it started to feel more natural. Seeing it all come to life in real time through Expo made the struggle feel worth it.</p>
+          <p>The real challenge though was setting up the API, that part was brutal. I kept running into weird errors, missing API keys, and CORS issues that made no sense. I’d fix one problem and another one would pop up! But after a ton of trial and error, it finally connected and started returning real data. That first successful API response felt like a small victory dance moment.</p>
+          <p>All in all, it was a week of headaches and breakthroughs classic dev life. But I can finally say I’m starting to get the hang of React.</p>
           <p>Thats it for week 5, we will see you at the end of next week! :)</p>
-
-          <blockquote class="imgur-embed-pub" lang="en" data-id="a/qtMEhwE" data-context="false" ><a href="//imgur.com/a/qtMEhwE"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-          
+          <blockquote class="imgur-embed-pub" lang="en" data-id="a/qtMEhwE" data-context="false"><a href="//imgur.com/a/qtMEhwE"></a></blockquote>
+          <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
         </div>
       </article>
-      
-    </section>
 
-                          <!-- POSTS Week 6-->      
+      <!-- POSTS Week 6 -->
       <article class="card post">
         <div class="phd">
           <img src="https://i.imgur.com/5A7Rj2V.png" alt="avatar" width="32" height="32" style="border-radius:50%"/>
-          <div><span class="author">You</span> • <span class="tiny">Week 6 • 11/1/2025 4:20pm </span></div>
+          <div><span class="author">You</span> • <span class="tiny">Week 6 • 11/08/2025 4:20pm</span></div>
         </div>
         <div class="pbd">
-          <p><strong>week 6: Merging branches and Comp Vision</strong> Reserved</p>
-          <p>This week was rough! I spent way too long trying to merge my branch into main and it just kept fighting me. 
-            I clicked every button GitHub threw at me, and somehow made it worse.I ended up scrapping the whole thing and just redoing the branch from scratch. Painful, 
-            but honestly kinda satisfying once I finally got it working again.</p> <p>After that chaos, I switched gears back to the computer vision model. It’s still a work in progress, 
-              but at least it feels like I’m moving forward again. I’m training it to recognize a few more objects, and every time the accuracy goes up even a little, it’s like getting a 
-              small win after the merge disaster. Definitely learned that Git can humble you real fast, but hey—progress is progress.</p> <p>Next time I’m making a backup before I even think
-                about merging anything again.</p>
+          <p><strong>week 6: Merging branches and Comp Vision</strong></p>
+          <p>This week was rough! I spent way too long trying to merge my branch into main and it just kept fighting me. I clicked every button GitHub threw at me, and somehow made it worse. I ended up scrapping the whole thing and just redoing the branch from scratch. Painful, but honestly kinda satisfying once I finally got it working again.</p>
+          <p>After that chaos, I switched gears back to the computer vision model. It’s still a work in progress, but at least it feels like I’m moving forward again. I’m training it to recognize a few more objects, and every time the accuracy goes up even a little, it’s like getting a small win after the merge disaster.</p>
+          <p>Definitely learned that Git can humble you real fast, but hey—progress is progress. Next time I’m making a backup before I even think about merging anything again.</p>
         </div>
       </article>
+    </section>
 
     <!-- RIGHT: ADS / FRIENDS -->
     <aside class="rightcol">
@@ -311,23 +452,22 @@ Thanks for tunning in and well see you next week!
             <button id="playSong">Play</button>
             <button id="pauseSong" class="secondary">Pause</button>
           </div>
-          <div class="tiny">Browsers block autoplay with sound. Hit <strong>Play</strong> like it’s 2008 </div>
+          <div class="tiny">Browsers block autoplay with sound. Hit <strong>Play</strong> like it’s 2008</div>
         </div>
       </div>
 
-    <div class="card" style="margin-top:18px">
-      <div class="hd"><h3>Sponsored (Totally 2008)</h3></div>
-      <div class="bd">
-        <div class="ad">
-          <img 
-            src="https://i.ytimg.com/vi/tGWAPYQ5suY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDClEZIZcDXG6uyZV68XB0_8GwsXQ" 
-            alt="OSRS Ad Banner" 
-            style="max-width:100%; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.3); cursor:pointer;"
-          />
+      <div class="card" style="margin-top:18px">
+        <div class="hd"><h3>Sponsored (Totally 2008)</h3></div>
+        <div class="bd">
+          <div class="ad">
+            <img
+              src="https://i.ytimg.com/vi/tGWAPYQ5suY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDClEZIZcDXG6uyZV68XB0_8GwsXQ"
+              alt="OSRS Ad Banner"
+              style="max-width:100%; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.3); cursor:pointer;"
+            />
+          </div>
         </div>
       </div>
-    </div>
-
 
       <div class="card" style="margin-top:18px">
         <div class="hd"><h3>Top 8</h3></div>
@@ -347,13 +487,15 @@ Thanks for tunning in and well see you next week!
   </main>
 
   <footer>
-    <div>GitHub Pages • ©2025 <span id="yr"></span> You</div>
+    <div>GitHub Pages • © <span id="yr"></span> Marcos Luna</div>
   </footer>
 
   <!-- Now Playing badge -->
   <div id="nowPlaying" class="now-playing">
     <div style="display:flex; gap:4px; align-items:end; margin-right:6px">
-      <div class="eqdot"></div><div class="eqdot"></div><div class="eqdot"></div>
+      <div class="eqdot"></div>
+      <div class="eqdot"></div>
+      <div class="eqdot"></div>
     </div>
     <span></span>
   </div>
@@ -362,9 +504,11 @@ Thanks for tunning in and well see you next week!
     // Dates
     const today = new Date();
     const fmt = today.toLocaleString('en-US', { month:'short', day:'2-digit' });
-    document.getElementById('today').textContent = `${fmt}, ${today.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'})}`;
+    document.getElementById('today').textContent =
+      `${fmt}, ${today.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'})}`;
     document.getElementById('yr').textContent = today.getFullYear();
-    document.getElementById('lastLogin').textContent = 'Last Login: ' + today.toLocaleDateString('en-US');
+    document.getElementById('lastLogin').textContent =
+      'Last Login: ' + today.toLocaleDateString('en-US');
 
     // Profile song (manual)
     const audio = document.getElementById('profileSong');
@@ -373,14 +517,24 @@ Thanks for tunning in and well see you next week!
     const playSong = document.getElementById('playSong');
     const pauseSong = document.getElementById('pauseSong');
     const savedSong = localStorage.getItem('profileSongUrl');
-    if(savedSong){ audio.src = savedSong; songUrl.value = savedSong; }
-    saveSong.onclick = () => { if(songUrl.value){ localStorage.setItem('profileSongUrl', songUrl.value); audio.src = songUrl.value; audio.load(); }};
+
+    if (savedSong){
+      audio.src = savedSong;
+      songUrl.value = savedSong;
+    }
+
+    saveSong.onclick = () => {
+      if(songUrl.value){
+        localStorage.setItem('profileSongUrl', songUrl.value);
+        audio.src = songUrl.value;
+        audio.load();
+      }
+    };
     playSong.onclick = () => { audio.play().catch(() => {}); };
     pauseSong.onclick = () => audio.pause();
 
     // Sparkles
-    let sparkleTimer; let activeSparkles = [];
-    window.addEventListener('mousemove', function sparkleMove(e){
+    window.addEventListener('mousemove', function(e){
       for(let i=0;i<2;i++){
         const s = document.createElement('div');
         s.className = 'sparkle';
@@ -388,14 +542,17 @@ Thanks for tunning in and well see you next week!
         s.style.width = s.style.height = size+'px';
         s.style.left = (e.clientX + (Math.random()*12-6))+'px';
         s.style.top = (e.clientY + (Math.random()*12-6))+'px';
-        s.style.background = `radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,215,0,.9) 40%, rgba(255,255,255,0) 70%)`;
+        s.style.background =
+          'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,215,0,.9) 40%, rgba(255,255,255,0) 70%)';
         document.body.appendChild(s);
-        activeSparkles.push(s);
-        setTimeout(()=>{ s.style.transition = 'all .6s ease-out'; s.style.transform = 'translateY(-12px) scale(.6)'; s.style.opacity = '0'; }, 0);
-        setTimeout(()=>{ s.remove(); activeSparkles = activeSparkles.filter(x=>x!==s); }, 650);
+        setTimeout(()=>{
+          s.style.transition = 'all .6s ease-out';
+          s.style.transform = 'translateY(-12px) scale(.6)';
+          s.style.opacity = '0';
+        }, 0);
+        setTimeout(()=>{ s.remove(); }, 650);
       }
     });
-  
   </script>
 </body>
 </html>
