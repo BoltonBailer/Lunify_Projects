@@ -608,6 +608,34 @@
         </div>
       </article>
                                                   <!-- END POSTS Week 16-->
+
+                                                                 <!-- START POSTS Week 17-->
+      <article class="card post">
+        <div class="phd">
+          <img src="https://i.imgur.com/5A7Rj2V.png" alt="avatar" width="32" height="32" style="border-radius:50%"/>
+          <div><span class="author">You</span> • <span class="tiny">Week 17 • 2/08/2026 4:20pm</span></div>
+        </div>
+        <div class="pbd">
+
+          <p><strong>Plant Identify overhaull</strong></p> 
+<p>
+This week I focused on polishing the Identify feature and wiring together multiple APIs into a single user flow. The goal was to let users upload or take a photo, identify a plant, and then enrich that result with additional data like pollinator friendliness and Wikipedia links.
+</p>
+
+<p>
+While the core functionality worked, I ran into performance issues where some requests took a long time to return or timed out completely. It was an issue with the Await for an API to finish the req.
+</p>
+
+<p>
+To fix things, I reducedthe payload sizes, added timeout handling, and made sure the app fails gracefully when a request doesn’t respond in time. Even when an API is slow or unavailable, the UI stays responsive and usable.
+</p>
+
+<p>
+Overall, this was a good lesson in building real-world features where things don’t always work perfectly. Debugging these issues helped me think more about performance, error handling, and designing flows that still feel solid under less-than-ideal conditions.
+</p>
+        </div>
+      </article>
+                                                  <!-- END POSTS Week 17-->
     </section>
 
     <!-- RIGHT: ADS / FRIENDS -->
